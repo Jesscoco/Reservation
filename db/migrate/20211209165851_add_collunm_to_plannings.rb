@@ -1,0 +1,6 @@
+class AddCollunmToPlannings < ActiveRecord::Migration[5.2]
+  def change
+    add_column :plannings, :start_time, :datetime
+    add_column :plannings, :end_time, :datetime
+  end
+end

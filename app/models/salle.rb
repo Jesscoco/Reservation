@@ -1,0 +1,2 @@
+class Salle < ApplicationRecord
+end

@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @salle.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @salle.status %>
+</p>
+
+<%= link_to 'Edit', edit_salle_path(@salle) %> |
+<%= link_to 'Back', salles_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beginhour: 2021-12-08 10:34:12
+  endinghour: 2021-12-08 10:34:12
+  courses: MyText
+  date: 2021-12-08
+
+two:
+  beginhour: 2021-12-08 10:34:12
+  endinghour: 2021-12-08 10:34:12
+  courses: MyText
+  date: 2021-12-08

@@ -1,0 +1,22 @@
+
+<p>
+  <strong>Beginhour:</strong>
+  <%= @planning.start_time %>
+</p>
+
+<p>
+  <strong>Endinghour:</strong>
+  <%= @planning.end_time %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @planning.courses %>
+</p>
+
+<p>
+  <strong>Professeur:</strong>
+  <%= @planning.user.name %>
+</p>
+
+<%= link_to 'Back', plannings_path %>

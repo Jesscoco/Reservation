@@ -1,0 +1,27 @@
+<%= form_with(model: salle, local: true) do |form| %>
+  <% if salle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(salle.errors.count, "error") %> prohibited this salle from being saved:</h2>
+
+      <ul>
+      <% salle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.check_box :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+
+<h1>Planning</h1>
+<%= month_calendar(events: @plannings) do |date, plannings| %>
+  <%= date.day %>
+
+  <% plannings.each do |planning| %>
+    <div>
+    <a href='<%= planning_path(planning.id) %> '> <%= planning.courses %> à <%= planning.start_time.strftime("%H : %M")
+ %></a>
+    </div>
+  <% end %>
+<% end %>
+<br>
