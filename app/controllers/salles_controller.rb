@@ -12,7 +12,6 @@ class SallesController < ApplicationController
 
   def reserved
     @salle = Salle.find(params[:id])
-    @salle.status=true
     @salle.save
     @salles = Salle.all
     render :index
@@ -20,16 +19,19 @@ class SallesController < ApplicationController
   # GET /salles/new
   def new
     @salle = Salle.new
+    @salle.materials.build
   end
 
   # GET /salles/1/edit
   def edit
+    @salle.materials.build
   end
 
   # POST /salles or /salles.json
   def create
     @salle = Salle.new(salle_params)
-
+    @salle.user_id = current_user.id
+    @salle.status=true
     respond_to do |format|
       if @salle.save
         format.html { redirect_to @salle, notice: "Salle was successfully created." }
@@ -71,6 +73,6 @@ class SallesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def salle_params
-      params.require(:salle).permit(:name, :status)
+      params.require(:salle).permit(:name, :status, :start_time, :end_time, :courses, materials_attributes: [:id, :name])
     end
 end

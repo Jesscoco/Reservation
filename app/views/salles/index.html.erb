@@ -1,6 +1,6 @@
 
 <h1>Salles</h1>
-
+<%= link_to 'Reserver', new_salle_path %>
 <table>
   <thead>
     <tr>
@@ -14,9 +14,13 @@
     <% @salles.each do |salle| %>
       <tr>
         <td><%= salle.name %></td>
-        <td><%= salle.status %></td>
+        <% if salle.status==true %>
+          <td> Réserver </td>
+        <% else %>
+        
+        <td> Libre </td>
         <td><%= link_to 'Faire une réservation', edit_salle_path(salle) %> </td>
-
+        <% end %>
       </tr>
     <% end %>
   </tbody>

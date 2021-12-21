@@ -17,10 +17,28 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status %>
+    <%= form.label :courses %>
+    <%= form.text_area :courses %>
   </div>
 
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :materials do |f| %>
+      <div class="field">
+        <h4> Réserver un materiel <em> (facultatif) </em>  </h4>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

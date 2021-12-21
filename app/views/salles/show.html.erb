@@ -4,9 +4,37 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @salle.status %>
+  <strong>Cours:</strong>
+  <%= @salle.courses %>
 </p>
 
-<%= link_to 'Edit', edit_salle_path(@salle) %> |
-<%= link_to 'Back', salles_path %>
+<p>
+  <strong>Nom du prof:</strong>
+  <%= @salle.user.name %>
+</p>
+
+<p>
+  <strong>Heure de début:</strong>
+  <%= @salle.start_time %>
+</p>
+
+<p>
+  <strong>Heure de fin:</strong>
+  <%= @salle.end_time %>
+</p>
+
+<p>
+  <strong>Materiels loués</strong>
+  <% @salle.materials.each do |material| %>
+    <ul>
+     <li> <%= material.name %></li>
+    </ul>
+  <%end%>
+</p>
+
+<% if current_user.status == "enseignant" %>
+  <%= link_to 'Edit', edit_salle_path(@salle) %> |
+  <%= link_to 'Back', salles_path %>
+<% end %>
+
+
